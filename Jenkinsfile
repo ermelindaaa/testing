@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checkout-ing project'
-                git 'https://github.com/ermelindaaa/testing.git'
+                git 'https://github.com/ermelindaaa/taleas-api.git'
                 echo 'Checkout Success!'
             }
         }
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Run Container') {
             steps {              
-                sh 'docker run -d -p 8085:8080 --name server api_gateway_image'           
+                sh 'docker run -d -p 8090:8080 --name server api_gateway_image'           
             }
         }
     }
